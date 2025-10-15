@@ -13,7 +13,7 @@
 .title{
     font-size: 30px;
     font-weight: 600;
-    color: #fff;
+    color: var(--colour-text);
     text-decoration: none;
 }
 
