@@ -13,8 +13,8 @@
 .title{
     font-size: 30px;
     font-weight: 600;
+    color: #fff;
     text-decoration: none;
-    color: var(--color-text);
 }
 
 .menu{
