@@ -1,10 +1,10 @@
 import styles from "./App.module.css";
-import { About } from "./components/About/About";
-import { Contact } from "./components/Contact/Contact";
-import { Experience } from "./components/Experience/Experience";
-import { Hero } from "./components/Hero/Hero";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Projects } from "./components/Projects/Projects";
+import  About from "./components/About/About.jsx";
+import  Contact  from "./components/Contact/Contact.jsx";
+import  Experience from "./components/Experience/Experience.jsx";
+import  Hero from "./components/Hero/Hero.jsx";
+import  Navbar from "./components/Navbar/Navbar.jsx";
+import  Projects from "./components/Projects/Projects.jsx";
 
 function App() {
   return (

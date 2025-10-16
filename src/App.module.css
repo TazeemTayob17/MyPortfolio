@@ -2,7 +2,6 @@
 
 .App{
     background-color: var(--colour-bg);
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+    min-height: 100vh;
+    width: 100%; 
 }

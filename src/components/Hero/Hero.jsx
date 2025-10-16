@@ -1,8 +1,8 @@
 import React from "react";
-import heroImage from "../../../assets/hero/heroImage.png";
+import heroImage from "../../assets/hero/heroImage.png";
 import styles from "./Hero.module.css";
 
-const Hero = () => {
+function Hero() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
@@ -20,6 +20,6 @@ const Hero = () => {
       <div className={styles.bottomBlur} />
     </section>
   );
-};
+}
 
 export default Hero;
