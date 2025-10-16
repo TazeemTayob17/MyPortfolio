@@ -12,7 +12,7 @@
 }
 
 .title {
-  color: var(--color-text);
+  color: var(--colour-text);
   font-size: 35px;
   font-weight: 700;
   letter-spacing: 1.75px;
@@ -30,7 +30,7 @@
 }
 
 .aboutItems {
-  color: var(--color-text);
+  color: var(--colour-text);
   display: flex;
   flex-direction: column;
   gap: 50px;
