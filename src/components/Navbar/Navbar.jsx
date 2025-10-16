@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import styles from "./Navbar.module.css";
-import { getImageUrl } from "../../utils";
+import getImageUrl from "../../utils";
 import menuIcon from "../../assets/nav/menuIcon.png";
 import closedIcon from "../../assets/nav/closeIcon.png";
 

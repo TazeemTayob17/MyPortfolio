@@ -1,11 +1,19 @@
 import React from "react";
 
+const skillImages = import.meta.glob('../../assets/skills/*.png', { eager: true, import: 'default' });
+
 import styles from "./Experience.module.css";
 import skills from "../../data/skills.json";
 import history from "../../data/history.json";
-import { getImageUrl } from "../../utils";
+
+import getImageUrl from "../../utils";
+
+function getSkillImage(imageSrc) {
+  return skillImages[`../../assets/${imageSrc}`];
+}
 
 function Experience() {
+
   return (
     <section className={styles.container} id="experience">
       <h2 className={styles.title}>Experience</h2>
@@ -15,14 +23,14 @@ function Experience() {
             return (
               <div key={id} className={styles.skill}>
                 <div className={styles.skillImageContainer}>
-                  <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />
+                  <img src={getSkillImage(skill.imageSrc)} alt={skill.title} />
                 </div>
                 <p>{skill.title}</p>
               </div>
             );
           })}
         </div>
-        <ul className={styles.history}>
+        {/*<ul className={styles.history}>
           {history.map((historyItem, id) => {
             return (
               <li key={id} className={styles.historyItem}>
@@ -42,7 +50,7 @@ function Experience() {
               </li>
             );
           })}
-        </ul>
+        </ul>*/}
       </div>
     </section>
   );

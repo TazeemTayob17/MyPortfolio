@@ -1,21 +1,25 @@
 import React from "react";
 
 import styles from "./About.module.css";
-import { getImageUrl } from "../../utils";
+//import getImageUrl from "../../utils.js";
+import cursorIcon from "../../assets/about/cursorIcon.png";
+import aboutImage from "../../assets/about/aboutImage.png";
+import serverIcon from "../../assets/about/serverIcon.png";
+import uilcon from "../../assets/about/uiIcon.png";
 
-function About(){
+function About() {
   return (
     <section className={styles.container} id="about">
       <h2 className={styles.title}>About</h2>
       <div className={styles.content}>
         <img
-          src={getImageUrl("about/aboutImage.png")}
+          src={aboutImage}
           alt="Me sitting with a laptop"
           className={styles.aboutImage}
         />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
+            <img src={cursorIcon} alt="Cursor icon" />
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
@@ -25,7 +29,7 @@ function About(){
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
+            <img src={serverIcon} alt="Server icon" />
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
@@ -35,7 +39,7 @@ function About(){
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src={getImageUrl("about/cursorIcon.png")} alt="UI icon" />
+            <img src={uilcon} alt="UI icon" />
             <div className={styles.aboutItemText}>
               <h3>UI Designer</h3>
               <p>

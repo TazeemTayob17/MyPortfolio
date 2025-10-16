@@ -1,11 +1,12 @@
 import React from "react";
 
 import styles from "./ProjectCard.module.css";
-import { getImageUrl } from "../../utils";
+import getImageUrl from "../../utils";
 
-export const ProjectCard = ({
+const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, source },
 }) => {
+  //console.log(getImageUrl(imageSrc));
   return (
     <div className={styles.container}>
       <img
@@ -35,3 +36,5 @@ export const ProjectCard = ({
     </div>
   );
 };
+
+export default ProjectCard;
