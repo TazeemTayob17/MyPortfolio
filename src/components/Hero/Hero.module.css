@@ -39,7 +39,18 @@
     margin-bottom: 52px;
 }
 
+.actions{
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.CVbtn,
 .contactBtn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     background-color: var(--colour-primary);
     color: var(--colour-text);
@@ -95,6 +106,11 @@
 }
 
 @media screen and (max-width: 830px){
+    .actions{
+        flex-direction: column;
+        gap: 12px;
+    }
+    
     .container{
         flex-direction: column-reverse;
     }
