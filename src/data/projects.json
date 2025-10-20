@@ -1,27 +1,43 @@
 
 [
   {
-    "title": "Project A",
+    "title": "SkillVerse",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "description": "Freelance management platform connecting clients with skilled professionals for various projects.",
+    "skills": ["MERN stack", "JavaScript", "Bootstrap", "Azure Web Services"],
+    "demo": "https://lively-coast-034460503.6.azurestaticapps.net/",
+    "source": "https://github.com/SkillVerser"
   },
   {
-    "title": "Project B",
+    "title": "UniCopilot",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node", "Sass"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "description": "An AI-powered virtual assistant designed to assist students with their university applications",
+    "skills": ["HTML", "CSS", "JavaScript", "Typescript", "Azure OpenAI"],
+    "demo": "https://youtu.be/wyEMNUznC2Q",
+    "source": "https://github.com/SibuisoMbenenge/uni-copilot"
   },
   {
-    "title": "Project C",
+    "title": "Premier League 2025/26 Predictor",
     "imageSrc": "projects/project.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React", "Express", "Node"],
-    "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "description": "Built a machine learning model to predict the final overall standings for Premier League 2025/26 season.",
+    "skills": ["Python", "Machine Learning"],
+    "demo": "https://github.com/TazeemTayob17/PL-25-26-ML-Prediction",
+    "source": "https://github.com/TazeemTayob17/PL-25-26-ML-Prediction"
+  },
+  {
+    "title": "8 Puzzle Solver",
+    "imageSrc": "projects/project.png",
+    "description": "Built different search algorithms to solve the 8 puzzle problem and compared their performances.",
+    "skills": ["Java", "Search Algorithms"],
+    "demo": "https://github.com/TazeemTayob17/8Puzzle-Solver",
+    "source": "https://github.com/TazeemTayob17/8Puzzle-Solver"
+  },
+  {
+    "title": "To-Do List App",
+    "imageSrc": "projects/project.png",
+    "description": "Built a To-Do List application to experiment with JavaScript Local Storage",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "demo": "https://github.com/TazeemTayob17/ToDoListApp",
+    "source": "https://github.com/TazeemTayob17/ToDoListApp"
   }
 ]
