@@ -33,10 +33,9 @@
     text-decoration: none;
 }
 
-/*.menuBtn{
-    color: red;
-    background-color: green;
-}*/
+.menuBtn{
+    display: none;
+}
 
 @media screen and (max-width: 830px){
     .navbar{

@@ -8,7 +8,7 @@ import closedIcon from "../../assets/nav/closeIcon.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
+  return ( 
     <nav className={styles.navbar}>
       <a className={styles.title} href="/">
         Portfolio
