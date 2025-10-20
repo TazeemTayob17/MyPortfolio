@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import styles from "./Navbar.module.css";
+import styles from "../Navbar/Navbar.module.css";
 import getImageUrl from "../../utils";
 import menuIcon from "../../assets/nav/menuIcon.png";
 import closedIcon from "../../assets/nav/closeIcon.png";
@@ -8,7 +8,7 @@ import closedIcon from "../../assets/nav/closeIcon.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  return ( 
+  return (
     <nav className={styles.navbar}>
       <a className={styles.title} href="/">
         Portfolio
@@ -29,7 +29,7 @@ function Navbar() {
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
