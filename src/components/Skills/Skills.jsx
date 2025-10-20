@@ -1,6 +1,9 @@
 import React from "react";
 
-const skillImages = import.meta.glob('../../assets/skills/*.png', { eager: true, import: 'default' });
+const skillImages = import.meta.glob("../../assets/skills/*.png", {
+  eager: true,
+  import: "default",
+});
 
 import styles from "../Skills/Skills.module.css";
 import skills from "../../data/skills.json";
@@ -10,7 +13,6 @@ function getSkillImage(imageSrc) {
 }
 
 function Skills() {
-
   return (
     <section className={styles.container} id="skills">
       <h2 className={styles.title}>Skills</h2>
@@ -20,7 +22,11 @@ function Skills() {
             return (
               <div key={id} className={styles.skill}>
                 <div className={styles.skillImageContainer}>
-                  <img src={getSkillImage(skill.imageSrc)} alt={skill.title} />
+                  <img
+                    src={getSkillImage(skill.imageSrc)}
+                    className="imageStyle"
+                    alt={skill.title}
+                  />
                 </div>
                 <p>{skill.title}</p>
               </div>

@@ -29,6 +29,8 @@
   gap: 37px;
 }
 
+
+
 .skill {
   display: flex;
   flex-direction: column;
@@ -44,10 +46,14 @@
   justify-content: center;
   width: 120px;
   height: 120px;
+  overflow: hidden;
 }
 
 .skillImageContainer img {
   width: 75px;
+  height: 75px;
+  object-fit: contain;
+  background: transparent;
 }
 
 .skill p {
