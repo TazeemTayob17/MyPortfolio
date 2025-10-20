@@ -6,7 +6,7 @@ import emailIcon from "../../assets/contact/emailIcon.png";
 import linkedinIcon from "../../assets/contact/linkedinIcon.png";
 import githubIcon from "../../assets/contact/githubIcon.png";
 
-function Contact(){
+function Contact() {
   return (
     <footer id="contact" className={styles.container}>
       <div className={styles.text}>
@@ -16,22 +16,23 @@ function Contact(){
       <ul className={styles.links}>
         <li className={styles.link}>
           <img src={emailIcon} alt="Email icon" />
-          <a href="mailto:myemail@email.com">myemail@email.com</a>
+          <a href="mailto:tazeemtayob17@gmail.com">tazeemtayob17@gmail.com</a>
         </li>
         <li className={styles.link}>
-          <img
-            src={linkedinIcon}
-            alt="LinkedIn icon"
-          />
-          <a href="https://www.linkedin.com/myname">linkedin.com/myname</a>
+          <img src={linkedinIcon} alt="LinkedIn icon" />
+          <a href="https://www.linkedin.com/in/tazeem-tayob-b3a0122aa">
+            linkedin.com/Tazeem Tayob
+          </a>
         </li>
         <li className={styles.link}>
           <img src={githubIcon} alt="Github icon" />
-          <a href="https://www.github.com/myname">github.com/myname</a>
+          <a href="https://www.github.com/TazeemTayob17">
+            github.com/TazeemTayob17
+          </a>
         </li>
       </ul>
     </footer>
   );
-};
+}
 
 export default Contact;
