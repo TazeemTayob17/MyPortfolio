@@ -4,9 +4,6 @@ const skillImages = import.meta.glob('../../assets/skills/*.png', { eager: true,
 
 import styles from "../Skills/Skills.module.css";
 import skills from "../../data/skills.json";
-import history from "../../data/history.json";
-
-import getImageUrl from "../../utils";
 
 function getSkillImage(imageSrc) {
   return skillImages[`../../assets/${imageSrc}`];

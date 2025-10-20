@@ -23,8 +23,8 @@ function About() {
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                I enjoy building responsive and optimized sites with great user
+                experiences.
               </p>
             </div>
           </li>
@@ -33,18 +33,18 @@ function About() {
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                I enjoy working on backend projects, involving databases, APIs
+                and server-side logic.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
             <img src={uilcon} alt="UI icon" />
             <div className={styles.aboutItemText}>
-              <h3>UI Designer</h3>
+              <h3>Problem Solving</h3>
               <p>
-                I have designed multiple landing pages and have created design
-                systems as well
+                I love figuring out how to solve problems, while building great
+                software that can be used by everyone!
               </p>
             </div>
           </li>
