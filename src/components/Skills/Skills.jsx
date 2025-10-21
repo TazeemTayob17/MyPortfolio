@@ -10,7 +10,7 @@ import skills from "../../data/skills.json";
 
 function getSkillImage(imageSrc) {
   return skillImages[`../../assets/${imageSrc}`];
-}
+} 
 
 function Skills() {
   return (
