@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "../../assets/hero/heroImage.png";
+import heroImage from "../../assets/hero/profileImage.png";
 import styles from "./Hero.module.css";
 import CV from "../../assets/CV.pdf";
 

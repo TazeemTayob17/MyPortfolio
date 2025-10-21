@@ -62,8 +62,14 @@
 }
 
 .heroImg{
-    width: 50%;
+    width: 56%;               /* increased size */
+    max-width: 520px;         /* larger cap on wide screens */
+    min-width: 280px;         /* cap size on large screens */
+    aspect-ratio: 1 / 1;      /* force square box */
+    object-fit: cover;        /* fill square, preserves center */
+    border-radius: 50%;       /* circular shape */
     z-index: 1;
+    overflow: hidden;
 
     animation-name: floating;
     animation-duration: 3s;
