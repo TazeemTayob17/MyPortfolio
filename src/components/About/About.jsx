@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./About.module.css";
 //import getImageUrl from "../../utils.js";
 import cursorIcon from "../../assets/about/cursorIcon.png";
-import aboutImage from "../../assets/about/aboutImage.png";
+import aboutImage from "../../assets/about/avatar-final.png";
 import serverIcon from "../../assets/about/serverIcon.png";
 import uilcon from "../../assets/about/uiIcon.png";
 
