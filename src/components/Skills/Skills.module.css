@@ -54,6 +54,7 @@
   height: 75px;
   object-fit: contain;
   background: transparent;
+  overflow: hidden;
 }
 
 .skill p {
