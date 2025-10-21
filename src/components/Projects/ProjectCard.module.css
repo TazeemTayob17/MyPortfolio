@@ -1,72 +1,237 @@
 @import "../../vars.css";
 
 .container {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   border-radius: 10px;
   background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
   box-shadow: 0 16px 14px 0 #04152d;
   padding: 18px 24px;
+  max-width: 345px;*/
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
+  box-shadow: 0 10px 20px rgba(3, 10, 25, 0.35);
+  padding: 18px 24px;
   max-width: 345px;
+  transition: transform 360ms cubic-bezier(.22,.9,.17,1), box-shadow 360ms, filter 360ms;
+  will-change: transform, box-shadow, filter;
+  transform: translateZ(0);
+  overflow: visible;
+  transform-origin: center;
+}
+
+/* subtle outer glow that animates on hover */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  z-index: -1;
+  filter: blur(8px) saturate(1.02);
+  opacity: 0;
+  transition: opacity 360ms, transform 360ms;
+  transform: scale(0.98);
 }
 
 .image {
-  display: block;
+  /*display: block;
   width: 100%;
-  height: 200px;              /* fixed visual box */
-  object-fit: contain;        /* <-- no cropping, whole image visible */
-  background: transparent; /* same as .container */
+  height: 200px;              
+  object-fit: contain;        
+  background: transparent; 
   background-position: center;
   background-size: cover;
-  border-radius: 8px;         /* match card rounding */
+  border-radius: 8px;         
   margin-bottom: 26px;
-  padding: 12px;              /* optional padding to give space around contained image */
+  padding: 12px;              
+  overflow: hidden;*/
+  display: block;
+  width: 100%;
+  height: 200px;              /* consistent visual box */
+  background: transparent;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;        /* slightly rounded */
+  margin-bottom: 22px;
+  padding: 12px;              /* space around contained image */
   box-sizing: border-box;
-  overflow: hidden; 
+  overflow: hidden;           /* clip child image to rounded corners */
+  transition: transform 420ms cubic-bezier(.22,.9,.17,1), filter 420ms;
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 auto;
+}
+
+/* inner sheen that sweeps across on hover */
+.image::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  transform: rotate(25deg) translateX(-30%);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 48%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: transform 700ms cubic-bezier(.22,.9,.17,1), opacity 420ms;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  border-radius: 12px;
+}
+
+/* ensure nested <img> fills the boxed area without cropping and respects rounding */
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* no cropping */
+  border-radius: 8px;    /* inner rounding */
+  display: block;
+  transition: transform 420ms cubic-bezier(.22,.9,.17,1), filter 420ms;
 }
 
 .title {
   font-size: 25px;
   font-weight: 700;
+  transition: transform 320ms, color 320ms;
 }
 
 .description {
-  margin-top: 6px;
+  /*margin-top: 6px;
   font-size: 25px;
+  font-weight: 400;*/
+  margin-top: 6px;
+  font-size: 16px;
   font-weight: 400;
+  color: rgba(255,255,255,0.92);
+  transition: transform 320ms, opacity 320ms;
 }
 
 .skills {
   width: 100%;
   margin-top: 14px;
+  margin-bottom: 18px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 6px;
   list-style: none;
+  flex: 0 0 auto;
 }
 
 .skill {
-  font-size: 25px;
+  /*font-size: 25px;
   font-weight: 400;
   border-radius: 100px;
   background: var(--colour-dark);
-  padding: 2px 22px;
+  padding: 2px 22px;*/
+
+  /*font-size: 14px;
+  font-weight: 500;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  color: var(--colour-text);
+  padding: 6px 12px;*/
+
+  font-size: 14px;
+  font-weight: 700;                     /* stronger weight for immediate visibility */
+  letter-spacing: 0.4px;                /* slight spacing for readability */
+  border-radius: 100px;
+  background: rgba(255,255,255,0.08);   /* subtle light pill that matches the card */
+  color: red;                       /* high contrast white text */
+  padding: 8px 14px;                    /* a bit more breathing room */
+  box-shadow: 0 1px 0 rgba(255,255,255,0.03), 0 4px 10px rgba(3,10,25,0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+
+}
+
+/* small hover lift to draw attention without adding new colors */
+.skill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(3,10,25,0.16);
+  background: rgba(255,255,255,0.10);
 }
 
 .links {
-  width: 100%;
+  /*width: 100%;
   margin-top: 26px;
   display: flex;
+  justify-content: space-around;*/
+  width: 100%;
+  margin-top: auto;
+  display: flex;
   justify-content: space-around;
+  gap: 12px;
 }
 
 .link {
-  text-decoration: none;
+  /*text-decoration: none;
   color: var(--colour-text);
   font-size: 30px;
   font-weight: 600;
   border-radius: 100px;
   background: var(--colour-primary);
-  padding: 1px 22px;
+  padding: 1px 22px;*/
+  text-decoration: none;
+  color: var(--colour-text);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  padding: 8px 16px;
+  transition: transform 260ms, background 260ms, color 260ms;
+}
+
+/* hover state: lift, deeper shadow, image pop, sheen sweep */
+.container:hover {
+  transform: translateY(-12px); /* no scale/rotate so text stays sharp */
+  box-shadow: 0 32px 60px rgba(7,24,68,0.55), 0 6px 18px rgba(7,24,68,0.28);
+  filter: saturate(1.04) brightness(1.02);
+}
+.container:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.container:hover .image {
+  transform: translateY(-8px) scale(1.03);
+  filter: drop-shadow(0 18px 34px rgba(8,18,40,0.35));
+}
+.container:hover .image::after {
+  transform: rotate(25deg) translateX(40%);
+  opacity: 1;
+}
+.container:hover .image img {
+  transform: scale(1.015);
+}
+
+/* small interactive boost for title/description on hover */
+.container:hover .title {
+  transform: translateY(-6px);
+  color: var(--colour-primary);
+}
+.container:hover .description {
+  transform: translateY(-4px);
+  opacity: 0.98;
+}
+
+/* link hover */
+.link:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.09));
+  color: var(--colour-primary);
+}
+
+/* responsive adjustments */
+@media (max-width: 480px) {
+  .image { height: 160px; padding: 10px; }
+  .container { padding: 14px; }
+  .title { font-size: 20px; }
+  .description { font-size: 14px; }
+  .skill { font-size: 13px; padding: 5px 10px; }
+  .container:hover { transform: none; box-shadow: 0 12px 28px rgba(7,24,68,0.35); }
 }

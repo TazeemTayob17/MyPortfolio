@@ -15,12 +15,28 @@
 }
 
 .projects {
-  margin-top: 37px;
+  /*margin-top: 37px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 15px;
+  width: 100%;*/
+  margin-top: 37px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 345px));
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  grid-auto-rows: 1fr; /* force rows to be equal height */
   width: 100%;
 }
+
+/* optional: smaller gap on very small screens 
+@media (max-width: 420px) {
+  .projects {
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}*/
