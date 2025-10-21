@@ -31,6 +31,41 @@
     font-size: 25px;
     color: var(--colour-text);
     text-decoration: none;
+
+    /* new: hover effect base */
+    position: relative;
+    display: inline-block;
+    transition: color 220ms ease, transform 220ms ease;
+    will-change: transform, color;
+}
+
+/* animated underline */
+.menuItems a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.95), var(--colour-primary));
+    border-radius: 3px;
+    transition: transform 300ms cubic-bezier(.22,.9,.17,1), opacity 220ms;
+    opacity: 0;
+}
+
+/* hover/focus state */
+.menuItems a:hover,
+.menuItems a:focus{
+    color: var(--colour-primary);
+    transform: translateY(-4px);
+    text-shadow: 0 8px 28px rgba(86,108,188,0.14);
+}
+.menuItems a:hover::after,
+.menuItems a:focus::after{
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
 }
 
 .menuBtn{
@@ -73,6 +108,17 @@
     .menuOpen{
         display: flex;
         z-index: 1;
+    }
+
+    /* mobile: adjust underline because menu is vertical */
+    .menuItems a::after{
+        bottom: 12px;
+        width: 40%;
+    }
+
+    /* make hover accessible on touch by also applying when menu item is focused */
+    .menuItems a:focus{
+        transform: none;
     }
 }
 
