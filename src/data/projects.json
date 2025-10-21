@@ -7,7 +7,7 @@
     "skills": ["MERN stack", "JavaScript", "Bootstrap", "Azure Web Services"],
     "demo": "https://lively-coast-034460503.6.azurestaticapps.net/",
     "source": "https://github.com/SkillVerser"
-  },
+  }, 
   {
     "title": "UniCopilot",
     "imageSrc": "projects/unicopilot.png",
@@ -21,7 +21,6 @@
     "imageSrc": "projects/PL.png",
     "description": "Built a machine learning model to predict the final overall standings for Premier League 2025/26 season.",
     "skills": ["Python", "Machine Learning"],
-    "demo": "https://github.com/TazeemTayob17/PL-25-26-ML-Prediction",
     "source": "https://github.com/TazeemTayob17/PL-25-26-ML-Prediction"
   },
   {
@@ -29,7 +28,6 @@
     "imageSrc": "projects/8puzzle.png",
     "description": "Built different search algorithms to solve the 8 puzzle problem and compared their performances.",
     "skills": ["Java", "Search Algorithms"],
-    "demo": "https://github.com/TazeemTayob17/8Puzzle-Solver",
     "source": "https://github.com/TazeemTayob17/8Puzzle-Solver"
   },
   {
@@ -37,7 +35,6 @@
     "imageSrc": "projects/todolist.png",
     "description": "Built a To-Do List application to experiment with JavaScript Local Storage",
     "skills": ["HTML", "CSS", "JavaScript"],
-    "demo": "https://github.com/TazeemTayob17/ToDoListApp",
     "source": "https://github.com/TazeemTayob17/ToDoListApp"
   }
 ]
