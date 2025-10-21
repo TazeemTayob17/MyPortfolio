@@ -11,7 +11,18 @@
 }
 
 .image {
+  display: block;
+  width: 100%;
+  height: 200px;              /* fixed visual box */
+  object-fit: contain;        /* <-- no cropping, whole image visible */
+  background: transparent; /* same as .container */
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;         /* match card rounding */
   margin-bottom: 26px;
+  padding: 12px;              /* optional padding to give space around contained image */
+  box-sizing: border-box;
+  overflow: hidden; 
 }
 
 .title {

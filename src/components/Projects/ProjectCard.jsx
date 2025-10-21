@@ -3,6 +3,15 @@ import React from "react";
 import styles from "./ProjectCard.module.css";
 import getImageUrl from "../../utils";
 
+const skillImages = import.meta.glob("../../assets/projects/*.png", {
+  eager: true,
+  import: "default",
+});
+
+function getSkillImage(imageSrc) {
+  return skillImages[`../../assets/${imageSrc}`];
+}
+
 const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, source },
 }) => {
@@ -10,7 +19,7 @@ const ProjectCard = ({
   return (
     <div className={styles.container}>
       <img
-        src={getImageUrl(imageSrc)}
+        src={getSkillImage(imageSrc)}
         alt={`Image of ${title}`}
         className={styles.image}
       />

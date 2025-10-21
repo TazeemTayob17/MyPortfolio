@@ -10,7 +10,7 @@
   },
   {
     "title": "UniCopilot",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/unicopilot.png",
     "description": "An AI-powered virtual assistant designed to assist students with their university applications",
     "skills": ["HTML", "CSS", "JavaScript", "Typescript", "Azure OpenAI"],
     "demo": "https://youtu.be/wyEMNUznC2Q",
@@ -18,7 +18,7 @@
   },
   {
     "title": "Premier League 2025/26 Predictor",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/PL.png",
     "description": "Built a machine learning model to predict the final overall standings for Premier League 2025/26 season.",
     "skills": ["Python", "Machine Learning"],
     "demo": "https://github.com/TazeemTayob17/PL-25-26-ML-Prediction",
@@ -26,7 +26,7 @@
   },
   {
     "title": "8 Puzzle Solver",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/8puzzle.png",
     "description": "Built different search algorithms to solve the 8 puzzle problem and compared their performances.",
     "skills": ["Java", "Search Algorithms"],
     "demo": "https://github.com/TazeemTayob17/8Puzzle-Solver",
@@ -34,7 +34,7 @@
   },
   {
     "title": "To-Do List App",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/todolist.png",
     "description": "Built a To-Do List application to experiment with JavaScript Local Storage",
     "skills": ["HTML", "CSS", "JavaScript"],
     "demo": "https://github.com/TazeemTayob17/ToDoListApp",
