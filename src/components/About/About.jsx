@@ -6,7 +6,7 @@ import cursorIcon from "../../assets/about/cursorIcon.png";
 import aboutImage from "../../assets/about/avatar-final.png";
 import serverIcon from "../../assets/about/serverIcon.png";
 import uilcon from "../../assets/about/uiIcon.png";
-
+ 
 function About() {
   return (
     <section className={styles.container} id="about">

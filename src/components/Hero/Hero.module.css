@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+/* layout */
 .container{
     position: relative;
     display: flex;
@@ -11,34 +12,75 @@
     margin-right: 10%;
 }
 
+/* content reveal + staggering */
 .content{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     color: var(--colour-text);
     z-index: 1;
-}
 
+    /* child reveal animation (staggered) */
+}
+.content > * {
+  opacity: 0;
+  transform: translateY(12px) scale(.995);
+  animation: fadeUp 700ms cubic-bezier(.22,.9,.17,1) both;
+}
+.content > *:nth-child(1){ animation-delay: 0.06s; } /* title */
+.content > *:nth-child(2){ animation-delay: 0.18s; } /* description */
+.content > *:nth-child(3){ animation-delay: 0.30s; } /* actions */
+
+/* headline */
 .title{
     font-size: 72px;
     font-weight: 900;
-    margin-bottom: 33px;
+    margin-bottom: 18px;
     font-family: var(--font-roboto);
-    background: linear-gradient(
-        90deg, 
-        rgba(255, 255, 255, 1) 70%, 
-        rgba(255, 255, 255, 0) 120%
-    );
+    background: linear-gradient(90deg, rgba(255,255,255,1) 72%, rgba(255,255,255,0) 120%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    line-height: 1.02;
 }
 
+/* description */
 .description{
     font-size: 30px;
     font-family: var(--font-roboto);
-    margin-bottom: 52px;
+    margin-bottom: 28px;
+    color: rgba(255,255,255,0.92);
+    min-height: 3.2em;
 }
 
+/* keep typed text wrapping and smooth reveal */
+.typeText {
+  white-space: pre-wrap;
+  display: inline-block;
+  vertical-align: middle;
+  /* slightly stronger weight to improve readability while typing */
+  font-weight: 500;
+  color: rgba(255,255,255,0.95);
+}
+
+/* blinking cursor */
+.cursor {
+  display: inline-block;
+  margin-left: 6px;
+  width: 0.6ch;
+  color: var(--colour-primary);
+  opacity: 1;
+  animation: blink 1s steps(1, start) infinite;
+  vertical-align: middle;
+}
+
+/* subtle pause at end of typing: keep blinking cursor */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* actions row */
 .actions{
   display: flex;
   gap: 16px;
@@ -46,48 +88,109 @@
   align-items: center;
 }
 
+/* primary/secondary button styles with hover sheen */
 .CVbtn,
 .contactBtn{
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background-color: var(--colour-primary);
-    color: var(--colour-text);
     border-radius: 100px;
-    font-size: 30px;
-    font-weight: 600;
-    padding: 17px 26px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 20px;
+    transition: transform 260ms cubic-bezier(.22,.9,.17,1), box-shadow 260ms, background 260ms;
+    will-change: transform, box-shadow;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
+/* primary */
+.CVbtn{
+    background: linear-gradient(90deg, var(--colour-primary), rgba(86,108,188,0.92));
+    color: var(--colour-text);
+    box-shadow: 0 8px 20px rgba(86,108,188,0.12), inset 0 -2px 0 rgba(0,0,0,0.06);
+}
+.CVbtn::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* secondary */
+.contactBtn{
+    background: rgba(255,255,255,0.06);
+    color: var(--colour-text);
+    box-shadow: 0 6px 12px rgba(3,10,25,0.12);
+}
+
+/* hover/focus */
+.CVbtn:hover,
+.contactBtn:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 36px rgba(7,24,68,0.28);
+}
+.CVbtn:focus,
+.contactBtn:focus{
+    box-shadow: 0 0 0 4px rgba(86,108,188,0.14);
+    outline: none;
+}
+
+/* hero image: circular profile with entrance + float + subtle ring */
 .heroImg{
-    width: 56%;               /* increased size */
-    max-width: 520px;         /* larger cap on wide screens */
-    min-width: 280px;         /* cap size on large screens */
-    aspect-ratio: 1 / 1;      /* force square box */
-    object-fit: cover;        /* fill square, preserves center */
-    border-radius: 50%;       /* circular shape */
-    z-index: 1;
+    display: block;                 /* avoid inline-image quirks */
+    flex: 0 0 auto;                 /* keep image size stable inside flex layout */
+    width: clamp(160px, 28vw, 360px);
+    max-width: 90%;
+    min-width: 120px;
+    aspect-ratio: 1 / 1;            /* enforce a perfect square */
+    height: auto;                   /* height derived from width via aspect-ratio */
+    object-fit: cover;
+    border-radius: 50%;             /* circular */
     overflow: hidden;
+    z-index: 1;
 
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    /* entrance + floating (no scale so size stays constant) */
+    opacity: 0;
+    transform: translateY(8px);
+    animation: imgIn 900ms cubic-bezier(.22,.9,.17,1) 0.42s both,
+               floating 3800ms ease-in-out 1.2s infinite;
+    box-shadow: 0 20px 40px rgba(3,10,25,0.38);
+    transition: transform 360ms, box-shadow 360ms;
 }
 
+/* hover on image for interactive lift (desktop) */
+.heroImg:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(3,10,25,0.46);
+}
+
+/* floating keyframe (gentle) */
 @keyframes floating{
-    0% { transform: translate(0, 0px); }
-    50% { transform: translate(0, 10px); }
-    100% { transform: translate(0, -0px); }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
 }
 
+/* entrance keyframe for image */
+@keyframes imgIn{
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* fade-up for content children */
+@keyframes fadeUp{
+  from { opacity: 0; transform: translateY(12px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* top/bottom decorative blurred blobs (animated pulse) */
 .topBlur{
     position: absolute;
     width: 50vw;
     height: 50vw;
-    min-width: 350px;
     min-width: 350px;
     top: -128px;
     left: -10vw;
@@ -95,13 +198,15 @@
     background: rgba(25, 55, 109, 0.7);
     filter: blur(100px);
     z-index: 0;
+    opacity: 0.9;
+    animation: blobPulse 6s ease-in-out infinite;
 }
 
-.buttomBlur{
+.bottomBlur{
+    /* fixed typo corrected: matches JSX .bottomBlur */
     position: absolute;
     width: 70vw;
     height: 50vw;
-    min-width: 350px;
     min-width: 250px;
     top: 246px;
     right: -25vw;
@@ -109,8 +214,18 @@
     background: rgba(25, 55, 109, 0.7);
     filter: blur(100px);
     z-index: 0;
+    opacity: 0.9;
+    animation: blobPulse 6s ease-in-out infinite reverse;
 }
 
+/* subtle pulsing of decorative blobs */
+@keyframes blobPulse {
+  0%   { transform: scale(0.98); opacity: 0.85; }
+  50%  { transform: scale(1.03); opacity: 0.95; }
+  100% { transform: scale(0.98); opacity: 0.85; }
+}
+
+/* smaller screens: stacked layout and scaled sizes */
 @media screen and (max-width: 830px){
     .actions{
         flex-direction: column;
@@ -123,6 +238,30 @@
 
     .content{
         align-items: center;
+        text-align: center;
+    }
+
+    .title{
+      font-size: 44px;
+    }
+
+    .description{
+      font-size: 20px;
+    }
+
+    .heroImg{
+      width: clamp(180px, 42vw, 420px);
+      max-width: 66%;
+      min-width: 160px;
+      height: auto;
+      align-self: center;
+      margin-bottom: 20px;
     }
 }
 
+/* respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .content > * { animation: none !important; transform: none !important; opacity: 1 !important; }
+  .heroImg { animation: none !important; transform: none !important; }
+  .topBlur, .bottomBlur { animation: none !important; }
+}
