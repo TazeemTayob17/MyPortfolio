@@ -6,27 +6,48 @@ import emailIcon from "../../assets/contact/emailIcon.png";
 import linkedinIcon from "../../assets/contact/linkedinIcon.png";
 import githubIcon from "../../assets/contact/githubIcon.png";
 
-function Contact() {
+function Contact() { 
   return (
     <footer id="contact" className={styles.container}>
       <div className={styles.text}>
         <h2>Contact</h2>
-        <p>Feel free to reach out!</p>
+        <p>Feel free to reach out — I'm available for freelance or full-time roles.</p>
       </div>
+
       <ul className={styles.links}>
         <li className={styles.link}>
-          <img src={emailIcon} alt="Email icon" />
-          <a href="mailto:tazeemtayob17@gmail.com">tazeemtayob17@gmail.com</a>
-        </li>
-        <li className={styles.link}>
-          <img src={linkedinIcon} alt="LinkedIn icon" />
-          <a href="https://www.linkedin.com/in/tazeem-tayob-b3a0122aa">
-            linkedin.com/Tazeem Tayob
+          <span className={styles.icon} aria-hidden="true">
+            <img src={emailIcon} alt="Email icon" />
+          </span>
+          <a href="mailto:tazeemtayob17@gmail.com" aria-label="Send email to Tazeem">
+            tazeemtayob17@gmail.com
           </a>
         </li>
+
         <li className={styles.link}>
-          <img src={githubIcon} alt="Github icon" />
-          <a href="https://www.github.com/TazeemTayob17">
+          <span className={styles.icon} aria-hidden="true">
+            <img src={linkedinIcon} alt="LinkedIn icon" />
+          </span>
+          <a
+            href="https://www.linkedin.com/in/tazeem-tayob-b3a0122aa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open LinkedIn profile"
+          >
+            linkedin.com/TazeemTayob
+          </a>
+        </li>
+
+        <li className={styles.link}>
+          <span className={styles.icon} aria-hidden="true">
+            <img src={githubIcon} alt="Github icon" />
+          </span>
+          <a
+            href="https://www.github.com/TazeemTayob17"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open GitHub profile"
+          >
             github.com/TazeemTayob17
           </a>
         </li>

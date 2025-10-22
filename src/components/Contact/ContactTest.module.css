@@ -1,0 +1,148 @@
+/* ...existing code... */
+@import "../../vars.css";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 10%;
+  box-sizing: border-box;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(10,18,34,0.45), rgba(6,12,22,0.5));
+}
+
+.card {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, rgba(26,36,66,0.84), rgba(18,26,46,0.9));
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(3,10,25,0.55);
+  color: var(--colour-text);
+}
+
+/* header */
+.header {
+  margin-bottom: 18px;
+}
+.header h2 {
+  margin: 0 0 6px 0;
+  font-size: 34px;
+  letter-spacing: 0.6px;
+}
+.header p {
+  margin: 0;
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+}
+
+/* form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* row for name + email */
+.row {
+  display: flex;
+  gap: 14px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 0;
+}
+.labelText {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+}
+
+/* inputs */
+input,
+textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--colour-text);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow 200ms, border-color 200ms, transform 120ms;
+}
+input:focus,
+textarea:focus {
+  border-color: rgba(86,108,188,0.9);
+  box-shadow: 0 8px 24px rgba(86,108,188,0.08);
+  transform: translateY(-2px);
+}
+
+/* error state */
+.inputError {
+  border-color: rgba(255,100,100,0.9) !important;
+  box-shadow: 0 6px 18px rgba(255,100,100,0.06) !important;
+}
+.error {
+  color: #ffb4b4;
+  font-size: 13px;
+}
+
+/* actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+}
+.primary {
+  background: linear-gradient(90deg, var(--colour-primary), rgba(86,108,188,0.95));
+  color: var(--colour-text);
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+}
+.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(86,108,188,0.18);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  color: var(--colour-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 200ms, background 200ms;
+}
+.secondary:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.06);
+}
+
+/* small helper notes */
+.note {
+  margin-top: 12px;
+  color: rgba(190,250,210,0.95);
+  font-size: 14px;
+}
+.noteError {
+  margin-top: 12px;
+  color: #ffb4b4;
+  font-size: 14px;
+}
+
+/* responsive */
+@media screen and (max-width: 880px) {
+  .row { flex-direction: column; }
+  .card { padding: 22px; }
+  .header h2 { font-size: 28px; }
+}

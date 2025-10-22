@@ -39,7 +39,6 @@ function Hero() {
         <h1 className={styles.title}>Hi, I'm Tazeem Tayob</h1>
         <p className={styles.description}>
           <span className={styles.typeText}>{typed}</span>
-          
         </p>
         <div className={styles.actions}>
           <a href={CV} download className={styles.CVbtn}>
