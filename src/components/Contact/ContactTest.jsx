@@ -84,7 +84,7 @@ function ContactTest() {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Jane Doe"
+                placeholder="John Doe"
                 autoComplete="name"
               />
               {errors.name && (
