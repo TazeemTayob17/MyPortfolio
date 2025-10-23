@@ -48,7 +48,7 @@ function Hero() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I'm Tazeem Tayob</h1>
+        <h1 className={styles.title}>Hi, I am Tazeem Tayob</h1>
         <p className={styles.description}>
           <span className={styles.typeText}>{typed}</span>
         </p>
