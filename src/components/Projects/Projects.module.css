@@ -14,6 +14,12 @@
   text-transform: uppercase;
 }
 
+.projectsIntro{
+  margin-top: 35px;
+  font-size: 18px;
+  color: var(--colour-text);
+}
+
 .projects {
   /*margin-top: 37px;
   display: flex;
