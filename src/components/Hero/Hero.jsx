@@ -5,7 +5,7 @@ import CV from "../../assets/CV.pdf";
 
 function Hero() {
   const fullText =
-    "I'm a BSc Computer Science and Mathematics student at the University of the Witwatersrand";
+    "I am a BSc Computer Science and Mathematics student at the University of the Witwatersrand";
 
   const [typed, setTyped] = useState("");
 
