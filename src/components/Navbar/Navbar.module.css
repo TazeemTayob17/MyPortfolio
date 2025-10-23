@@ -1,13 +1,26 @@
 @import "../../vars.css";
 
 .navbar{
-    position: relative;
+    /* make navbar sticky at top */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 61px;
-    z-index: 2;
-    margin: 0 10%;
+    padding: 18px 10%;
+    z-index: 9999;
+
+    /* subtle translucent background + blur so content behind doesn't show through harshly */
+    background: linear-gradient(180deg, rgba(6,12,22,0.78), rgba(6,12,22,0.62));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 6px 20px rgba(3,10,25,0.45);
+
+    /* keep same visual margin logic as before (centred content) */
+    margin: 0 auto;
+    width: 100%;
 }
 
 .title{
@@ -76,6 +89,7 @@
     .navbar{
         flex-direction: column;
         align-items: flex-start;
+        padding: 14px 6%;
     }
 
     .menu{
