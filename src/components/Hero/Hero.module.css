@@ -36,10 +36,16 @@
     font-weight: 900;
     margin-bottom: 18px;
     font-family: var(--font-roboto);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 72%, rgba(255,255,255,0) 120%);
+    /*background: linear-gradient(90deg, rgba(255,255,255,1) 72%, rgba(255,255,255,0) 120%);
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text;*/
     line-height: 1.02;
+
+    /* plain white text — remove gradient/clip/blur */
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 /* description */
@@ -257,6 +263,9 @@
     overflow: hidden;
     z-index: 1;
 
+    position: relative;
+    left: 50px;
+
     opacity: 0;
     transform: translateY(8px);
     animation: imgIn 900ms cubic-bezier(.22,.9,.17,1) 0.42s both,
@@ -355,6 +364,7 @@
       height: auto;
       align-self: center;
       margin-bottom: 20px;
+      left: 0;
     }
 
     .social { justify-content: center; gap: 12px; margin-bottom: 12px; }
