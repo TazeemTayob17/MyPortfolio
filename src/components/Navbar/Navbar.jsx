@@ -4,7 +4,7 @@ import styles from "../Navbar/Navbar.module.css";
 import getImageUrl from "../../utils";
 import menuIcon from "../../assets/nav/menuIcon.png";
 import closedIcon from "../../assets/nav/closeIcon.png";
- 
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,11 +29,11 @@ function Navbar() {
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
-          </li> 
+            <a href="#skills">Skills</a>
+          </li>
           <li>
             <a href="#contact">Contact</a>
           </li>
