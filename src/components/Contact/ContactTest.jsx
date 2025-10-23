@@ -70,9 +70,9 @@ function ContactTest() {
     <section id="contact" className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <h2>Contact</h2>
+          <h2>Contact Me</h2>
           <p>
-            I&apos;d love to hear about your project — send me a message below.
+            I&apos;d love to hear from you — send me a message below!
           </p>
         </div>
 
