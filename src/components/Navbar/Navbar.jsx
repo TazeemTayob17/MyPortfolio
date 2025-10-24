@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <a className={styles.title} href="/">
+      <a className={styles.title} href="/Tazeem-Portfolio">
         My Portfolio
       </a>
       <div className={styles.menu}>
